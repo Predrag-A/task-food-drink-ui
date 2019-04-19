@@ -1,21 +1,73 @@
 body {
-  background-color: #1d2c3f; }
+  background-color: #1d2c3f;
+  height: 100%; }
 
 .debug {
-  border: 1px solid red; }
+  border: 1px solid #ff0000; }
 
-.component {
-  border-radius: 10px; }
-  .component__mysteryBox {
-    background-image: url(../assets/images/mysterybox.png);
-    background-size: 100% 100%;
-    height: 400px;
-    width: 300px; }
+.container {
+  padding: 100px;
+  width: 1500px;
+  height: 1320px;
+  margin: auto; }
 
-.article {
-  background-color: #39756D;
-  border: 1px solid #F44131; }
-  .article--secondary {
-    background-color: #52a89d; }
-  .article__child {
-    background-color: #20423d; }
+.grid {
+  display: grid;
+  grid-template-areas: 'menu menu calendar' 'meal burger calendar' 'meal drinks drinks';
+  grid-template-columns: 1fr 1fr 1.2fr;
+  grid-template-rows: 1fr 1.8fr 1fr;
+  grid-gap: 40px; }
+  .grid__menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+    grid-gap: 40px; }
+  .grid__calendar {
+    grid-area: calendar;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px; }
+  .grid__burger {
+    grid-area: burger;
+    height: 590px;
+    width: 470;
+    background-color: white; }
+    .grid__burger img {
+      border-radius: 10px 10px 0px 0px; }
+  .grid__meal {
+    grid-area: meal;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 40px; }
+  .grid__drinks {
+    grid-area: drinks;
+    background-image: url("../assets/images/drinks.png");
+    background-size: 100% 100%; }
+
+.menu__main {
+  background-color: #e9342c; }
+
+.menu__linguine {
+  background-color: white; }
+
+.menu__ingredients {
+  background-image: url("../assets/images/ingredients.png");
+  background-size: 100% 100%; }
+
+.calendar__main {
+  background-color: #0f1722; }
+
+.calendar__list {
+  background-color: white; }
+
+.meal__main {
+  background-color: #ecc20b; }
+
+.meal__newFlavour {
+  background-color: white; }
+
+.card {
+  border-radius: 10px;
+  transition: 0.3s; }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5); }

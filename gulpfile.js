@@ -4,6 +4,7 @@
 const gulp = require('gulp');
 
 const sass = require('gulp-sass'), 
+      htmlmin = require('gulp-htmlmin'),
       sassLint = require('gulp-sass-lint'), 
       imagemin = require('gulp-imagemin'), 
       autoprefixer = require('gulp-autoprefixer');
@@ -12,10 +13,11 @@ const sass = require('gulp-sass'),
 // Compilation
 //------------------------------------------------------------------------------
 
-// Copy HTML
+// Minify HTML
 gulp.task('compile-html', function(){
     return gulp
         .src('src/**/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'));
 })
 
@@ -23,9 +25,9 @@ gulp.task('compile-html', function(){
 gulp.task('compile-sass', function(){
     return gulp
         .src('src/scss/*.scss')
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError())
+        //.pipe(sassLint())
+        //.pipe(sassLint.format())
+        //.pipe(sassLint.failOnError())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest('dist/css'));

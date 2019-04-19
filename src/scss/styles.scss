@@ -1,35 +1,112 @@
 @import 'components/variables';
 
 body {
-  background-color: #1d2c3f;
+  background-color: $background-color;
+  height: 100%;
 }
 
 .debug {
-  border: 1px solid red;
+  border: 1px solid $debug-color;
 }
 
-.component {
-  border-radius: 10px;
+.container {
+  padding: 100px;
+  width: 1500px;
+  height: 1320px;
+  margin: auto;
+}
 
-  &__mysteryBox {
-    background-image: url(../assets/images/mysterybox.png);
+.grid {
+  display: grid;
+  grid-template-areas:
+  'menu menu calendar'
+  'meal burger calendar'
+  'meal drinks drinks';
+  grid-template-columns: 1fr 1fr 1.2fr;
+  grid-template-rows: 1fr 1.8fr 1fr;
+  grid-gap: 40px;
+
+  &__menu {
+    grid-area: menu;
+    display: grid;
+    grid-template-columns: 1fr 6fr 3fr;
+    grid-gap: 40px;
+  }
+  
+  &__calendar {
+    grid-area: calendar;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+  }
+  
+  &__burger {
+    grid-area: burger;
+    height: 590px;
+    width: 470;
+    background-color: white;
+    
+    img {
+      border-radius: 10px 10px 0px 0px;
+    }
+  }
+  
+  &__meal {
+    grid-area: meal;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 40px;
+  }
+  
+  &__drinks {
+    grid-area: drinks;
+    background-image: url('../assets/images/drinks.png');
     background-size: 100% 100%;
-    height: 400px;
-    width: 300px;
   }
 }
 
-.article {
+.menu {
 
-  background-color: $primary-color;
-  border: 1px solid $secondary-color;
-
-  &--secondary {
-    background-color: $primary-color-light;
+  &__main {
+    background-color: #e9342c;
   }
 
-  &__child {
-    background-color: $primary-color-dark;
+  &__linguine {
+    background-color: white;
+  }
+
+  &__ingredients {
+    background-image: url('../assets/images/ingredients.png');
+    background-size: 100% 100%;
   }
 }
 
+.calendar {
+
+  &__main {
+    background-color: #0f1722;
+  }
+
+  &__list {
+    background-color: white;
+  }
+}
+
+.meal {
+  
+  &__main {
+    background-color: #ecc20b;
+  }
+
+  &__newFlavour {
+    background-color: white;
+  }
+}
+
+.card {
+  border-radius: 10px;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.5);
+  }
+}
