@@ -1,0 +1,21 @@
+body {
+  background-color: #1d2c3f; }
+
+.debug {
+  border: 1px solid red; }
+
+.component {
+  border-radius: 10px; }
+  .component__mysteryBox {
+    background-image: url(../assets/images/mysterybox.png);
+    background-size: 100% 100%;
+    height: 400px;
+    width: 300px; }
+
+.article {
+  background-color: #39756D;
+  border: 1px solid #F44131; }
+  .article--secondary {
+    background-color: #52a89d; }
+  .article__child {
+    background-color: #20423d; }
