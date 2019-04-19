@@ -18,7 +18,7 @@ gulp.task('compile-html', function(){
     return gulp
         .src('src/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('docs'));
 })
 
 // Lint and Compile SASS
@@ -30,7 +30,7 @@ gulp.task('compile-sass', function(){
         //.pipe(sassLint.failOnError())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('docs/css'));
 })
 
 // Compile Images
@@ -38,7 +38,7 @@ gulp.task('compile-img', function(){
     return gulp
         .src('src/assets/images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/assets/images'));
+        .pipe(gulp.dest('docs/assets/images'));
 })
 
 // Compile all
