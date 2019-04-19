@@ -6,39 +6,42 @@ body {
   border: 1px solid #ff0000; }
 
 .container {
-  padding: 100px;
+  padding: 80px;
+  margin: auto;
   width: 1500px;
-  height: 1320px;
-  margin: auto; }
+  height: 1320px; }
 
 .grid {
   display: grid;
   grid-template-areas: 'menu menu calendar' 'meal burger calendar' 'meal drinks drinks';
   grid-template-columns: 1fr 1fr 1.2fr;
   grid-template-rows: 1fr 1.8fr 1fr;
-  grid-gap: 40px; }
+  grid-gap: 2rem;
+  height: 100%;
+  width: 100%; }
   .grid__menu {
     grid-area: menu;
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
-    grid-gap: 40px; }
+    grid-gap: 2rem; }
   .grid__calendar {
     grid-area: calendar;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 40px; }
+    grid-gap: 2rem; }
   .grid__burger {
     grid-area: burger;
     height: 590px;
     width: 470;
     background-color: white; }
     .grid__burger img {
-      border-radius: 10px 10px 0px 0px; }
+      border-radius: 10px 10px 0px 0px;
+      width: 100%; }
   .grid__meal {
     grid-area: meal;
     display: grid;
     grid-template-rows: 1fr 2fr;
-    grid-gap: 40px; }
+    grid-gap: 2rem; }
   .grid__drinks {
     grid-area: drinks;
     background-image: url("../assets/images/drinks.png");
@@ -48,7 +51,9 @@ body {
   background-color: #e9342c; }
 
 .menu__linguine {
-  background-color: white; }
+  background-color: white;
+  background-image: url("../assets/images/linguine.png");
+  background-size: 100% 100%; }
 
 .menu__ingredients {
   background-image: url("../assets/images/ingredients.png");
@@ -61,13 +66,16 @@ body {
   background-color: white; }
 
 .meal__main {
-  background-color: #ecc20b; }
+  background-color: #ecc20b;
+  background-image: url("../assets/images/fridaymeal.png");
+  background-size: 100% 100%; }
 
 .meal__newFlavour {
-  background-color: white; }
+  background-image: url("../assets/images/newflavor.png");
+  background-size: 100% 100%; }
 
 .card {
   border-radius: 10px;
   transition: 0.3s; }
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.5); }
+    box-shadow: 0px 0px 45px -5px #83e6e6; }

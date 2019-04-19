@@ -10,10 +10,10 @@ body {
 }
 
 .container {
-  padding: 100px;
+  padding: 80px;
+  margin: auto;
   width: 1500px;
   height: 1320px;
-  margin: auto;
 }
 
 .grid {
@@ -24,20 +24,22 @@ body {
   'meal drinks drinks';
   grid-template-columns: 1fr 1fr 1.2fr;
   grid-template-rows: 1fr 1.8fr 1fr;
-  grid-gap: 40px;
+  grid-gap: 2rem;
+  height:100%;
+  width:100%;
 
   &__menu {
     grid-area: menu;
     display: grid;
     grid-template-columns: 1fr 6fr 3fr;
-    grid-gap: 40px;
+    grid-gap: 2rem;
   }
   
   &__calendar {
     grid-area: calendar;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 40px;
+    grid-gap: 2rem;
   }
   
   &__burger {
@@ -48,6 +50,7 @@ body {
     
     img {
       border-radius: 10px 10px 0px 0px;
+      width: 100%;
     }
   }
   
@@ -55,7 +58,7 @@ body {
     grid-area: meal;
     display: grid;
     grid-template-rows: 1fr 2fr;
-    grid-gap: 40px;
+    grid-gap: 2rem;
   }
   
   &__drinks {
@@ -73,6 +76,8 @@ body {
 
   &__linguine {
     background-color: white;
+    background-image: url('../assets/images/linguine.png');
+    background-size: 100% 100%;
   }
 
   &__ingredients {
@@ -96,10 +101,13 @@ body {
   
   &__main {
     background-color: #ecc20b;
+    background-image: url('../assets/images/fridaymeal.png');
+    background-size: 100% 100%;
   }
 
   &__newFlavour {
-    background-color: white;
+    background-image: url('../assets/images/newflavor.png');
+    background-size: 100% 100%;
   }
 }
 
@@ -107,6 +115,6 @@ body {
   border-radius: 10px;
   transition: 0.3s;
   &:hover {
-    box-shadow: 0 8px 16px 0 rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 45px -5px rgba(131,230,230,1);
   }
 }
