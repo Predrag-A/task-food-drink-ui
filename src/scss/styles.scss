@@ -75,14 +75,14 @@ html {
 .menu {
 
   &__main {
-    background-color: #e9342c;
+    background-color: $menu-color;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     padding: 0.1rem;
 
     &__img {
       position: relative;
-      border-bottom: 1px solid #dd352e;
+      border-bottom: 1px solid $menu-border;
       
       vertical-align: middle;
       img {
@@ -93,9 +93,21 @@ html {
   }
 
   &__linguine {
+    box-sizing: border-box;
     background-color: white;
     background-image: url('../assets/images/linguine.png');
     background-size: 100% 100%;
+
+    table {
+      margin-bottom: 1rem;
+    }
+    th {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    td {
+      text-align: center;
+    }
   }
 
   &__ingredients {
@@ -107,7 +119,7 @@ html {
 .calendar {
 
   &__main {
-    background-color: #0f1722;
+    background-color: $calendar-color;
   }
 
   &__list {
@@ -118,7 +130,7 @@ html {
 .meal {
   
   &__main {
-    background-color: #ecc20b;
+    background-color: $friday-meal-color;
     background-image: url('../assets/images/fridaymeal.png');
     background-size: 100% 100%;    
   }
@@ -141,6 +153,11 @@ html {
   }
 }
 
+.drinks {
+  width: 40%;
+  margin-left: 60%;
+}
+
 .card {
   border-radius: 10px;
   transition: 0.3s;
@@ -150,12 +167,30 @@ html {
   &__container {
     box-sizing: border-box;
     height:100%;
-    padding: 0.5rem;
+    padding: 1rem;
     
     &--center {
       @extend .card__container;
       text-align:center;
       align-items:center;
     }
+
+    &--small {
+      @extend .card__container;
+      padding: 0.25rem;
+    }
+  }
+}
+
+.star {
+  color: $star;
+  &--pink {
+    color: $star-pink;
+  }  
+  &--yellow {
+    color: $star-yellow;
+  }
+  &--gray {
+    color: $star-gray;
   }
 }

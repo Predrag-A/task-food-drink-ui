@@ -52,13 +52,29 @@
 //------------------------------------------------------------------------------
 // Text
 //------------------------------------------------------------------------------
-.small {
+.t--small {
   font-size: 0.5rem;
   font-weight: normal;
   color: $gray;
+
+  &--green {
+    @extend .t--small;
+    color: $green;
+  }
+
+  &--bold {
+    @extend .t--small;
+    font-weight: bold;
+  }
 }
 
-.medium {
+.t--medium {
   font-size: 0.75rem;
+  font-weight: normal;
   color: darken($gray, 25%);
+
+  &--bold {
+    @extend .t--medium;
+    font-weight: bold;
+  }
 }

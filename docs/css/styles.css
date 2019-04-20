@@ -25,14 +25,21 @@
     .button--gray:hover {
       background: #cdcdcd; }
 
-.small {
+.t--small, .t--small--green, .t--small--bold {
   font-size: 0.5rem;
   font-weight: normal;
   color: #cccccd; }
+  .t--small--green {
+    color: #a5cd80; }
+  .t--small--bold {
+    font-weight: bold; }
 
-.medium {
+.t--medium, .t--medium--bold {
   font-size: 0.75rem;
+  font-weight: normal;
   color: #8c8c8e; }
+  .t--medium--bold {
+    font-weight: bold; }
 
 html {
   font-family: 'Montserrat', sans-serif;
@@ -40,7 +47,7 @@ html {
   background-color: #1d2c3f; }
 
 .debug {
-  border: 1px solid #ff0000; }
+  border: 1px solid #f00; }
 
 .container {
   padding: 80px;
@@ -99,9 +106,17 @@ html {
       padding: 30%; }
 
 .menu__linguine {
+  box-sizing: border-box;
   background-color: white;
   background-image: url("../assets/images/linguine.png");
   background-size: 100% 100%; }
+  .menu__linguine table {
+    margin-bottom: 1rem; }
+  .menu__linguine th {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
+  .menu__linguine td {
+    text-align: center; }
 
 .menu__ingredients {
   background-image: url("../assets/images/ingredients.png");
@@ -130,15 +145,30 @@ html {
     margin-top: 75%;
     vertical-align: middle; }
 
+.drinks {
+  width: 40%;
+  margin-left: 60%; }
+
 .card {
   border-radius: 10px;
   transition: 0.3s; }
   .card:hover {
     box-shadow: 0px 0px 45px -5px #83e6e6; }
-  .card__container, .card__container--center {
+  .card__container, .card__container--center, .card__container--small {
     box-sizing: border-box;
     height: 100%;
-    padding: 0.5rem; }
+    padding: 1rem; }
     .card__container--center {
       text-align: center;
       align-items: center; }
+    .card__container--small {
+      padding: 0.25rem; }
+
+.star {
+  color: #fff; }
+  .star--pink {
+    color: #ed7b5a; }
+  .star--yellow {
+    color: #f8cf75; }
+  .star--gray {
+    color: #bcbfc7; }
