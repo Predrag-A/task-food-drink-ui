@@ -1,0 +1,64 @@
+@import 'variables';
+
+//------------------------------------------------------------------------------
+// Buttons
+//------------------------------------------------------------------------------
+.button {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: $button;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    background: $button-hover;
+  }
+
+  &--red {
+    @extend .button;
+    background: $button-red;
+
+    &:hover {
+      background: $button-red-hover;
+    }
+  }
+
+  &--blue {
+    @extend .button;
+    background: $button-blue;
+    
+    &:hover {
+      background: $button-blue-hover;
+    }
+  }
+
+  &--gray {
+    @extend .button;
+    background: $button-gray;
+    
+    &:hover {
+      background: $button-gray-hover;
+    }
+  }
+}
+
+
+//------------------------------------------------------------------------------
+// Text
+//------------------------------------------------------------------------------
+.small {
+  font-size: 0.5rem;
+  font-weight: normal;
+  color: $gray;
+}
+
+.medium {
+  font-size: 0.75rem;
+  color: darken($gray, 25%);
+}

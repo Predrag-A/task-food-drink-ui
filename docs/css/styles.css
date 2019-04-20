@@ -1,3 +1,39 @@
+.button, .button--red, .button--blue, .button--gray {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #8bc058;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: 0.3s; }
+  .button:hover, .button--red:hover, .button--blue:hover, .button--gray:hover {
+    background: #b2d590; }
+  .button--red {
+    background: #e9342c; }
+    .button--red:hover {
+      background: #f07771; }
+  .button--blue {
+    background: #478cba; }
+    .button--blue:hover {
+      background: #7fafcf; }
+  .button--gray {
+    background: #a7a7a7; }
+    .button--gray:hover {
+      background: #cdcdcd; }
+
+.small {
+  font-size: 0.5rem;
+  font-weight: normal;
+  color: #cccccd; }
+
+.medium {
+  font-size: 0.75rem;
+  color: #8c8c8e; }
+
 html {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
@@ -85,12 +121,24 @@ html {
 .meal__newFlavour {
   background-image: url("../assets/images/newflavor.png");
   background-size: 100% 100%; }
+  .meal__newFlavour__breaker {
+    border: 2px solid black;
+    width: 20%;
+    margin: auto; }
+  .meal__newFlavour__button {
+    margin: auto;
+    margin-top: 75%;
+    vertical-align: middle; }
 
 .card {
   border-radius: 10px;
   transition: 0.3s; }
   .card:hover {
     box-shadow: 0px 0px 45px -5px #83e6e6; }
-  .card__container {
-    padding: 0.25rem;
-    text-align: center; }
+  .card__container, .card__container--center {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0.5rem; }
+    .card__container--center {
+      text-align: center;
+      align-items: center; }

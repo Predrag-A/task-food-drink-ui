@@ -1,4 +1,5 @@
 @import 'components/variables';
+@import 'components/elements';
 
 html {
   font-family: 'Montserrat', sans-serif;
@@ -125,6 +126,18 @@ html {
   &__newFlavour {
     background-image: url('../assets/images/newflavor.png');
     background-size: 100% 100%;
+
+    &__breaker {
+      border: 2px solid black;
+      width:20%;
+      margin:auto;
+    }
+
+    &__button {
+      margin: auto;
+      margin-top:75%;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -135,7 +148,14 @@ html {
     box-shadow: 0px 0px 45px -5px rgba(131,230,230,1);
   }
   &__container {
-    padding: 0.25rem;
-    text-align: center;
+    box-sizing: border-box;
+    height:100%;
+    padding: 0.5rem;
+    
+    &--center {
+      @extend .card__container;
+      text-align:center;
+      align-items:center;
+    }
   }
 }
