@@ -50,6 +50,108 @@
 
 
 //------------------------------------------------------------------------------
+// Radio Buttons
+//------------------------------------------------------------------------------
+
+// Check variable values
+@if ($custom-radio-size % 2 == 1) { @error '$custom-radio-size must be even'; }
+// round to nearest even number
+@if ($custom-radio-pip-size % 2 == 1) { $custom-radio-pip-size: $custom-radio-pip-size - 1; }
+
+
+input[type="radio"] {
+  position: relative;
+  display: inline-block;
+
+  width:  $custom-radio-size - 2;
+  height: $custom-radio-size - 2;
+
+  border-radius: 100%;
+  -webkit-appearance: none;
+  
+  &::before {
+    position: relative;
+    top:  -$custom-radio-border-width;
+    left: -$custom-radio-border-width;
+    display: block;
+    content: '';
+
+
+    background: $custom-radio-bg;
+    border: $custom-radio-border-width solid $custom-radio-border;
+    border-radius: 100%;
+    box-shadow: $custom-radio-inset-shadow;
+
+    width:  $custom-radio-size;
+    height: $custom-radio-size;
+  }
+
+  &:active::before {
+    box-shadow: $custom-radio-inset-shadow,
+                $custom-radio-active-inset-shadow;
+  }
+
+  &:focus::before {
+    box-shadow: $custom-radio-inset-shadow,
+                $custom-radio-focus-shadow;
+  }
+
+  &:checked::before {
+    background: $custom-radio-bg;
+    border-color: $custom-radio-border;
+  }
+
+  &:disabled::before {
+    cursor: not-allowed;
+    background-color: $custom-radio-disabled-bg;
+    border-color: transparentize($custom-radio-border, .2);
+  }
+
+  &::after {
+    position: relative;
+    top: -($custom-radio-size / 2) - $custom-radio-border-width;
+    left: ($custom-radio-size / 2) - $custom-radio-border-width;
+
+
+    display: block;
+    content: '';
+
+    background: $custom-radio-pip-color;
+    border-radius: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+
+    width:  0;
+    height: 0;
+  }
+
+  &:checked::after {
+    transition: all ease-in-out $custom-radio-transition-speed 0;
+
+    top:  floor(
+            - ($custom-radio-size / 2)
+            - ($custom-radio-pip-size / 2)
+            - $custom-radio-border-width
+            - .5
+          );
+
+    left: floor(
+            + ($custom-radio-size / 2)
+            - ($custom-radio-pip-size / 2)
+            - $custom-radio-border-width
+            + 1
+          );
+
+    width:  $custom-radio-pip-size;
+    height: $custom-radio-pip-size;
+  }
+
+  &:disabled::after {
+    background: $custom-radio-disabled-pip-color;
+  }
+}
+
+
+//------------------------------------------------------------------------------
 // Text
 //------------------------------------------------------------------------------
 .t--small {
@@ -76,5 +178,28 @@
   &--bold {
     @extend .t--medium;
     font-weight: bold;
+  }
+}
+
+.t--white {
+  color: white;
+}
+
+//------------------------------------------------------------------------------
+// Other
+//------------------------------------------------------------------------------
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0px 2px;
+  background-color: $gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+  &:hover {
+    background-color: darken($gray, 50%);
   }
 }

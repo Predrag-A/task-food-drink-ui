@@ -113,6 +113,13 @@ html {
   &__ingredients {
     background-image: url('../assets/images/ingredients.png');
     background-size: 100% 100%;
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
   }
 }
 
@@ -132,7 +139,10 @@ html {
   &__main {
     background-color: $friday-meal-color;
     background-image: url('../assets/images/fridaymeal.png');
-    background-size: 100% 100%;    
+    background-size: 100% 100%;   
+    td {
+      padding: 0.5rem;
+    } 
   }
 
   &__newFlavour {
