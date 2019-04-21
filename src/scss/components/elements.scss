@@ -154,35 +154,83 @@ input[type="radio"] {
 //------------------------------------------------------------------------------
 // Text
 //------------------------------------------------------------------------------
-.t--small {
-  font-size: 0.5rem;
-  font-weight: normal;
-  color: $gray;
+.t { 
+  &--small {
+    font-size: 0.5rem;
+    font-weight: normal;
+    color: $gray;
+  
+    &--bold {
+      @extend .t--small;
+      font-weight: bold;
+    }
+  }
+
+  &--medium {
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: darken($gray, 25%);
+
+    &--bold {
+      @extend .t--medium;
+      font-weight: bold;
+    }
+  }
+
+  &--huge {
+    font-size: 2rem;
+    font-weight: normal;  
+    &--bold {
+      @extend .t--huge;
+      font-weight: bold;
+    }
+  }
+
+  &--selected {
+    border: 1px $green solid;
+    border-radius: 50%;
+    padding: 3px 4px;
+    margin-left: -3px;
+    
+    &--single {
+      @extend .t--selected;
+      padding: 5px 20px;
+    }
+  }
+
+  &--emphasized {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    &::before {
+      transform: translateX(-50%);
+      transform: translateY(300%);
+      border-radius: 100%;
+      position: absolute;
+      background: $yellow;
+      bottom: 5px;
+      height: 5px;
+      content: '';
+      width: 5px;
+      left: 50%;  
+    } 
+  }
+  
+  &--white {
+    color: white;
+  }
+  
+  &--gray {
+    color: gray;
+  }
 
   &--green {
-    @extend .t--small;
     color: $green;
   }
 
-  &--bold {
-    @extend .t--small;
-    font-weight: bold;
+  &--yellow {
+    color: $yellow;
   }
-}
-
-.t--medium {
-  font-size: 0.75rem;
-  font-weight: normal;
-  color: darken($gray, 25%);
-
-  &--bold {
-    @extend .t--medium;
-    font-weight: bold;
-  }
-}
-
-.t--white {
-  color: white;
 }
 
 //------------------------------------------------------------------------------
@@ -201,5 +249,42 @@ input[type="radio"] {
 
   &:hover {
     background-color: darken($gray, 50%);
+  }
+}
+
+.card {
+  border-radius: 10px;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0px 0px 45px -5px rgba(131,230,230,1);
+  }
+  &__container {
+    box-sizing: border-box;
+    height:100%;
+    padding: 1rem;
+    
+    &--center {
+      @extend .card__container;
+      text-align:center;
+      align-items:center;
+    }
+
+    &--small {
+      @extend .card__container;
+      padding: 0.25rem;
+    }
+  }
+}
+
+.star {
+  color: $star;
+  &--pink {
+    color: $star-pink;
+  }  
+  &--yellow {
+    color: $star-yellow;
+  }
+  &--gray {
+    color: $star-gray;
   }
 }

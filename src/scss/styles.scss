@@ -16,8 +16,7 @@ html {
   margin: auto;
   width: 1500px;
   height: 1320px;
-  zoom: 0.75;  
-  -moz-transform: scale(0.75);
+  zoom: 0.75;
 }
 
 .grid {
@@ -48,14 +47,11 @@ html {
   
   &__burger {
     grid-area: burger;
+    display: flex;
+    flex-direction: column;
     height: 590px;
     width: 470;
     background-color: white;
-    
-    img {
-      border-radius: 10px 10px 0px 0px;
-      width: 100%;
-    }
   }
   
   &__meal {
@@ -127,6 +123,39 @@ html {
 
   &__main {
     background-color: $calendar-color;
+    display: flex;
+
+    &__info {
+      
+      background-image: url('../assets/images/calendar.png');
+      background-size: 100% 100%;
+      flex: 45%;
+      table {
+        width:100%;
+        margin-bottom: 60%;
+      }
+      a {
+        margin-top: 80%;
+      }
+    }
+
+    &__cal {
+      flex: 55%;
+
+      ul {
+        list-style-type: none;
+      }
+      li {
+        display: inline-block;
+        width: 10%;
+        font-size: 0.75rem;
+        padding: 2%;
+      }
+
+      table {
+        width:100%;
+      }
+    }
   }
 
   &__list {
@@ -168,39 +197,41 @@ html {
   margin-left: 60%;
 }
 
-.card {
-  border-radius: 10px;
-  transition: 0.3s;
-  &:hover {
-    box-shadow: 0px 0px 45px -5px rgba(131,230,230,1);
+
+.burger {
+
+  &__image {
+    flex: 80%;
+    background-image: url('../assets/images/mysterybox.png');
+    background-size: 100% 100%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-bottom: 1px solid $lightblue;
+    position:relative;
   }
-  &__container {
+
+  &__info {
+    flex: 20%;
+    table {
+      width: 100%;
+    }
+    td {
+      padding: 5px;
+    }
+  }
+
+  &__rating {    
     box-sizing: border-box;
-    height:100%;
-    padding: 1rem;
-    
-    &--center {
-      @extend .card__container;
-      text-align:center;
-      align-items:center;
-    }
-
-    &--small {
-      @extend .card__container;
-      padding: 0.25rem;
-    }
-  }
-}
-
-.star {
-  color: $star;
-  &--pink {
-    color: $star-pink;
-  }  
-  &--yellow {
-    color: $star-yellow;
-  }
-  &--gray {
-    color: $star-gray;
+    line-height: 12px;
+    width: 100px;
+    height: 40px;
+    margin-top: 50px;
+    padding: 8px;
+    position:absolute;
+    top:0;
+    right:0;
+    background-color: $yellow;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 }
