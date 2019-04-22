@@ -15,6 +15,7 @@
   font-size: 0.8rem;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: bold;
 
   &:hover {
     background: $button-hover;
@@ -45,6 +46,10 @@
     &:hover {
       background: $button-gray-hover;
     }
+  }
+  
+  &--quantity {
+    background: $button;
   }
 }
 
@@ -230,6 +235,10 @@ input[type="radio"] {
 
   &--yellow {
     color: $yellow;
+  }
+
+  &--blue {
+    color: $lightblue;
   }
 }
 

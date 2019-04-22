@@ -160,6 +160,19 @@ html {
 
   &__list {
     background-color: white;
+    table {
+      width: 100%;
+      margin: 10px;
+      border-collapse: collapse; 
+    }
+    tr {
+      border-bottom: 1px solid $gray;
+      padding: 5px;
+    }
+    a {
+      display: inline-block;
+      margin: 5px;
+    }
   }
 }
 

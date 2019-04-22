@@ -9,7 +9,8 @@
   color: white;
   font-size: 0.8rem;
   text-decoration: none;
-  transition: 0.3s; }
+  transition: 0.3s;
+  font-weight: bold; }
   .button:hover, .button--red:hover, .button--blue:hover, .button--gray:hover {
     background: #b2d590; }
   .button--red {
@@ -24,6 +25,8 @@
     background: #a7a7a7; }
     .button--gray:hover {
       background: #cdcdcd; }
+  .button--quantity {
+    background: #8bc058; }
 
 input[type="radio"] {
   position: relative;
@@ -132,6 +135,9 @@ input[type="radio"] {
 
 .t--yellow {
   color: #ecc30a; }
+
+.t--blue {
+  color: #5c90bc; }
 
 .dot {
   cursor: pointer;
@@ -279,6 +285,16 @@ html {
 
 .calendar__list {
   background-color: white; }
+  .calendar__list table {
+    width: 100%;
+    margin: 10px;
+    border-collapse: collapse; }
+  .calendar__list tr {
+    border-bottom: 1px solid #cccccd;
+    padding: 5px; }
+  .calendar__list a {
+    display: inline-block;
+    margin: 5px; }
 
 .meal__main {
   background-color: #ecc20b;
