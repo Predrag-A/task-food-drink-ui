@@ -173,6 +173,14 @@ html {
       display: inline-block;
       margin: 5px;
     }
+    &__item {
+      &--p {        
+        width: 15%;
+      }
+      &--q {        
+        width: 25%;
+      }
+    }
   }
 }
 

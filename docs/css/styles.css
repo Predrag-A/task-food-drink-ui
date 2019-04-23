@@ -26,7 +26,11 @@
     .button--gray:hover {
       background: #cdcdcd; }
   .button--quantity {
-    background: #8bc058; }
+    background: #8bc058;
+    border: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 3px; }
 
 input[type="radio"] {
   position: relative;
@@ -295,6 +299,10 @@ html {
   .calendar__list a {
     display: inline-block;
     margin: 5px; }
+  .calendar__list__item--p {
+    width: 15%; }
+  .calendar__list__item--q {
+    width: 25%; }
 
 .meal__main {
   background-color: #ecc20b;

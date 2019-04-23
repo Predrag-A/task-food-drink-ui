@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/app.js"></script>
 </head>
 <body>
   <div class="container">
@@ -184,8 +185,8 @@
               <table>
                 <tr>
                   <th align="left" colspan="2" class="t--small">items</th>
-                  <th align="left" class="t--small">quantity</th>
-                  <th class="t--small">price</th>
+                  <th align="left" class="t--small calendar__list__item--q">quantity</th>
+                  <th align="left" class="t--small calendar__list__item--p">price</th>
                   <th></th>
                 </tr>
                 <tr>
@@ -195,11 +196,11 @@
                     <span class="t--small">$0.5/piece</span>
                   </td>
                   <td>
-                    <button class="t--white"><i class="fas fa-minus"></i></button>
-                    <span> 1 </span>
-                    <button class="t--white"><i class="fas fa-plus"></i></button>
+                    <button id="o-sub" class="t--white button--quantity" type="button"><i class="fas fa-minus"></i></button>
+                    <span id="o-quantity"></span>
+                    <button id="o-add" class="t--white button--quantity" type="button"><i class="fas fa-plus"></i></button>
                   </td>
-                  <td class="t--blue"><strong>$0.5</strong></td>
+                  <td class="t--blue"><strong id="o-total"></strong></td>
                   <td align="right" class="t--medium"><i class="fas fa-times"></i></td>
                 </tr>
                 <tr>
@@ -209,11 +210,11 @@
                     <span class="t--small">$1/piece</span>
                   </td>
                   <td>                    
-                    <button class="t--white"><i class="fas fa-minus"></i></button>
-                    <span> 21 </span>
-                    <button class="t--white"><i class="fas fa-plus"></i></button>
+                    <button id="l-sub" class="t--white button--quantity" type="button"><i class="fas fa-minus"></i></button>
+                    <span id="l-quantity"></span>
+                    <button id="l-add" class="t--white button--quantity" type="button"><i class="fas fa-plus"></i></button>
                   </td>
-                  <td class="t--blue"><strong>$21</strong></td>
+                  <td class="t--blue"><strong id="l-total"></strong></td>
                   <td align="right" class="t--medium"><i class="fas fa-times"></i></td>
                 </tr>
                 <tr>
@@ -223,16 +224,16 @@
                     <span class="t--small">$4/kg</span>
                   </td>
                   <td>                    
-                    <button class="t--white"><i class="fas fa-minus"></i></button> 
-                    <span>1</span> 
-                    <button class="t--white"><i class="fas fa-plus"></i></button>
+                    <button id="s-sub" class="t--white button--quantity" type="button"><i class="fas fa-minus"></i></button> 
+                    <span id="s-quantity"></span> 
+                    <button id="s-add" class="t--white button--quantity" type="button"><i class="fas fa-plus"></i></button>
                   </td>
-                  <td class="t--blue"><strong>$4</strong></td>
+                  <td class="t--blue"><strong id="s-total"></strong></td>
                   <td align="right" class="t--medium"><i class="fas fa-times"></i></td>
                 </tr>
               </table>              
               <a href="#" class="button">Add item</a>
-              <a href="#" class="button--gray">Empty list</a>
+              <a tabindex="0" id="empty-list" class="button--gray">Empty list</a>
             </form>
           </div>
         </div>
